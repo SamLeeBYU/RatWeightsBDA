@@ -42,7 +42,7 @@ We analyze the weights of 30 rats measured across 5 consecutive weeks. Each rat'
 
 The model is given by:
 
-$
+$$
 Y_{ij} \sim \mathcal{N}(\alpha_i + \beta_i x_{ij}, \tau), \quad
 \begin{pmatrix}
 \alpha_i \\
@@ -53,14 +53,14 @@ Y_{ij} \sim \mathcal{N}(\alpha_i + \beta_i x_{ij}, \tau), \quad
 \alpha_c \\
 \beta_c
 \end{pmatrix}, \Sigma \right),
-$
+$$
 
 with a hyperprior:
 
-$
+$$
 (\alpha_c, \beta_c) \sim \mathcal{N}_2(\eta, C), \quad
 \tau \sim \text{Inverse-Gamma}(\nu_0 / 2, \nu_0 \lambda_0 / 2)
-$
+$$
 
 ## 🚀 Implementation
 
