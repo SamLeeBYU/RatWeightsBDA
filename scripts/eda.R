@@ -1,4 +1,5 @@
 library(tidyverse)
+library(lme4)
 
 source("scripts/setup.R")
 
@@ -23,3 +24,16 @@ ggplot(rats, aes(x = weight, fill = factor(age))) +
   ) +
   theme
 
+model <- lmer(weight ~ 1 + age + (1 + age | rat), data=rats)
+
+resids <- residuals(model)
+
+ggplot(data.frame(residuals = resids), aes(sample = residuals)) +
+  stat_qq() +
+  stat_qq_line() +
+  labs(
+    title = "Q-Q Plot of Residuals",
+    x = "Theoretical Quantiles",
+    y = "Sample Quantiles"
+  ) +
+  theme

@@ -23,12 +23,12 @@ params <- data.frame(
 
 alpha.plt <- ggplot(subset(params, parameter == "alpha"), aes(x = value)) +
   geom_density(fill = "skyblue", alpha = 0.6) +
-  labs(title = "Density Plot of Alphas", x = expression(alpha[i]), y = "Density") +
+  labs(x = expression(alpha[i]), y = "Density") +
   theme
 
 beta.plt <- ggplot(subset(params, parameter == "beta"), aes(x = value)) +
   geom_density(fill = "orange", alpha = 0.6) +
-  labs(title = "Density Plot of Betas", x = expression(beta[i]), y="") +
+  labs( x = expression(beta[i]), y="") +
   theme
 
 alpha.plt + beta.plt
